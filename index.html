@@ -4,38 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pizzarendelés Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Pizza rendelő űrlap</h1>
     
-    <form>
+    <!-- <form> -->
+        <form method="post" action="https://httpbin.org/post">
         <label> Név: 
             <input type="text" name="name" placeholder="Pl. Kalap Jakab" maxlength="20" required>
         </label> 
-        <br>     
 
         <label> Telefonszám: 
             <input type="tel" name="phone" placeholder="+363010050" maxlength="20" required>
         </label>
-        <br>
 
         <label> E-mail: 
             <input type="email" name="e-mail" placeholder="Pl. kalap@gmail.com" maxlength="25" required>
         </label> 
-        <br>
         
         <fieldset>
             <legend> Pizza mérete</legend>
             <label> 
-                <input type="radio" name="size" required> Családi
+                <input type="radio" name="size" required value="Családi"> Családi
             </label> <br>
                     <label> 
-                <input type="radio" name="size" required> Közepes
+                <input type="radio" name="size" required value="Közepes"> Közepes
             </label> <br>
                     <label> 
-                <input type="radio" name="size" required> Kicsi
+                <input type="radio" name="size" required value="Kicsi"> Kicsi
             </label> 
         </fieldset>
+
+
+        <fieldset>
+            <legend> Feltétek</legend>
+            <label> 
+                <input type="checkbox" name="feltet" value="Mozzarella sajt"> Mozzarella sajt
+            </label> <br>
+                    <label> 
+                <input type="checkbox" name="feltet" value="Fetasajt"> Fetasajt
+            </label> <br>
+                    <label> 
+                <input type="checkbox" name="feltet" value="Kukorica"> Kukorica
+            </label> 
+            </label> <br>
+                    <label> 
+                <input type="checkbox" name="feltet" value="Bacon"> Bacon
+            </label> 
+        </fieldset>
+
+        <fieldset>
+            <legend>Megjegyzés</legend>
+            <textarea name="megjegyzes" id="megjegyzes_mezo" maxlength="200" placeholder="ide írhatod a megjegyzésed" 
+            rows="5" cols="100"></textarea>
+        </fieldset>
+
+        <button type="submit">Elküldés</button>
+        <button type="reset">Visszaállítás</button>
     </form>
 </body>
 </html>
